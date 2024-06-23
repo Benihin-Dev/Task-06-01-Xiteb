@@ -1,0 +1,18 @@
+.slideDown {
+    animation: slideDown 0.1s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .NavItemli{
+@apply text-gray-400 hover:text-[#3bb3b7] cursor-pointer duration-200
+  }

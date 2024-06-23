@@ -1,0 +1,7 @@
+.footerli{
+    @apply cursor-pointer hover:text-black duration-200
+}
+
+.footerSocialMediali{
+    @apply  hover:text-black duration-200 cursor-pointer
+}

@@ -1,3 +1,4 @@
+/* scrollbar Styles  */
 body::-webkit-scrollbar {
   width: 10px;
 }
@@ -37,6 +38,7 @@ body::-webkit-scrollbar-track {
   background-color: #ffffff10;
 }
 
+/* transition animations */
 .slideFromRight {
   animation: fromRight 0.2s ease-in-out;
 }
@@ -65,4 +67,13 @@ body::-webkit-scrollbar-track {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* colors */
+.themeColorForBG {
+  background: linear-gradient(270deg, #41c494, #19878b);
+}
+
+.themeColor {
+  background: linear-gradient(140deg, #5cdaab, #3bb3b7);
 }
