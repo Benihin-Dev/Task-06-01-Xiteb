@@ -31,7 +31,7 @@ export default function HomePage() {
     getProductDetails();
   }, []);
   return (
-    <div className=" w-screen overflow-hidden">
+    <div className=" w-full overflow-hidden customScrollBar">
       <NavBar />
       <OfferBanner />
       <Menu />

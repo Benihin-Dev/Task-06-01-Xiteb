@@ -4,7 +4,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #ededed55;
+  background-color: #e4e4e4a7;
   border-radius: 2px;
 }
 
@@ -76,4 +76,24 @@ body::-webkit-scrollbar-track {
 
 .themeColor {
   background: linear-gradient(140deg, #5cdaab, #3bb3b7);
+}
+
+
+.loader {
+  width: 34px;
+  padding: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: rotate 500ms infinite linear;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
 }
