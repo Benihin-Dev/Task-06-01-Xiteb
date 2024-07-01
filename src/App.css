@@ -40,13 +40,28 @@ body::-webkit-scrollbar-track {
 
 /* transition animations */
 .slideFromRight {
-  animation: fromRight 0.2s ease-in-out;
+  animation: fromRight 0.4s ease-in-out;
 }
 
 @keyframes fromRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideFromLeft {
+  animation: fromLeft 0.4s ease-in-out;
+}
+
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -78,10 +93,9 @@ body::-webkit-scrollbar-track {
   background: linear-gradient(140deg, #5cdaab, #3bb3b7);
 }
 
-
 .loader {
-  width: 34px;
-  padding: 5px;
+  width: 25px;
+  padding: 4px;
   aspect-ratio: 1;
   border-radius: 50%;
   background: #25b09b;
@@ -96,4 +110,48 @@ body::-webkit-scrollbar-track {
   to {
     transform: rotate(1turn);
   }
+}
+
+.component2Right {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: transform 0.5s;
+}
+
+.component2Right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.component2Left {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: transform 0.5s;
+}
+
+.component2Left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.component2Up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.5s;
+}
+
+.component2Up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.component2Down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform 0.5s;
+}
+
+.component2Down.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

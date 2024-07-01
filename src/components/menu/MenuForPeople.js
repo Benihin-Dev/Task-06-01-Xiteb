@@ -1,8 +1,18 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
-export default function MenuForPeople({menuData}) {
+export default function MenuForPeople({ menuData }) {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
   return (
-    <div className="  sm:w-1/2   sm:h-80 sm:flex rounded-xl overflow-hidden gap-3 space-y-3 sm:space-y-0">
+    <div
+      ref={ref}
+      className={`component2Up ${
+        inView ? "is-visible" : ""
+      }  sm:w-1/2   sm:h-80 sm:flex rounded-xl overflow-hidden gap-3 space-y-3 sm:space-y-0 `}
+    >
       <div className="relative h-full sm:w-1/2 bg-[#efefef]   flex justify-end items-end overflow-hidden shadow rounded-2xl sm:rounded-none hover:shadow-gray-300">
         <img
           src={menuData.personMenuData[0].image}

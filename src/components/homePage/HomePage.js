@@ -7,6 +7,7 @@ import OfferSliderBanner from "../offerSliderBanner/OfferSliderBanner";
 import SliderForProducts from "../slider/SliderForProducts";
 import Footer from "../footer/Footer";
 import LoadingAnimation from "../assets/LoadingAnimation";
+import Card from "../infoCard/Card";
 
 export default function HomePage() {
   const [productData, setProductData] = useState({});
@@ -32,13 +33,19 @@ export default function HomePage() {
   }, []);
   return (
     <div className=" w-full overflow-hidden customScrollBar">
-      <NavBar />
-      <OfferBanner />
-      <Menu />
-      <OfferSliderBanner />
-      <SliderForProducts />
-      <Footer />
-      {loading && <LoadingAnimation />}
+      {loading === true ? (
+        <LoadingAnimation />
+      ) : (
+        <>
+          <NavBar />
+          <OfferBanner />
+          <Menu />
+          <OfferSliderBanner />
+          <SliderForProducts />
+          <Card />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

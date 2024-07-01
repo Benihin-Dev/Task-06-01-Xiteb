@@ -201,7 +201,7 @@ export default function SliderForProducts({ data }) {
             <p className={` text-3xl pb-3  `}>
               Discover the Perfect Addition to Your Life
             </p>
-            <p className={`  sm:w-4/5 text-gray-400 leading-4 sm:pr-20 pb-10`}>
+            <p className={`  sm:w-4/5 text-gray-500 leading-4 sm:pr-20 pb-10`}>
               Treat yourself to the experiences you deserve. Explore our
               collection and unlock a world of possibilities. Add these amazing
               products to your cart today and start living your best life!
@@ -212,7 +212,7 @@ export default function SliderForProducts({ data }) {
             ref={sliderRef}
             dots={false}
             infinite={true}
-            slidesToShow={6}
+            slidesToShow={5.4}
             slidesToScroll={1}
             autoplay={true}
             autoplaySpeed={3000}
@@ -221,63 +221,62 @@ export default function SliderForProducts({ data }) {
               {
                 breakpoint: 940,
                 settings: {
-                  slidesToShow: 5,
+                  slidesToShow: 4,
                 },
               },
               {
                 breakpoint: 768,
                 settings: {
-                  slidesToShow: 4,
+                  slidesToShow: 3,
                 },
               },
               {
                 breakpoint: 576,
                 settings: {
-                  slidesToShow: 2.2,
+                  slidesToShow: 2,
                 },
               },
             ]}
           >
             {slides.map((item, index) => (
-              <div
-                key={index}
-                className="border cursor-pointer  bg-[#f9f9f9] overflow-hidden rounded-md shadow-sm hover:shadow-gray-300 hover:border-[#47b7a8] border-[#eaeaea] duration-200"
-              >
-                <div className="flex items-center justify-center h-[15vh] sm:h-[20vh] pt-2  lg:h-[28vh] overflow-hidden rounded-sm shadow-sm">
-                  <img
-                    src={item.image}
-                    alt=""
-                    className=" h-full hover:scale-150 p-5 scale-125 duration-200  object-contain"
-                  />
-                </div>
-                <div className="bg-white pt-2 flex flex-col">
-                  <div className="px-1 mt-auto">
-                    <div className="flex items-end justify-center">
-                      <div className="flex">
-                        {Array.from({ length: 5 }, (_, index) =>
-                          index < item.rating.rate ? (
-                            <HiStar
-                              key={index}
-                              className="text-[#ffad33d5] size-[15px]"
-                            />
-                          ) : (
-                            <HiOutlineStar
-                              key={index}
-                              className="text-gray-400 size-[15px]"
-                            />
-                          )
-                        )}
+              <div key={index} className=" px-2 sm:px-3 ">
+                <div className="border cursor-pointer  bg-[#f9f9f9] overflow-hidden rounded-md shadow-sm hover:shadow-gray-300 hover:border-[#47b7a8] border-[#eaeaea] duration-200">
+                  <div className="flex items-center justify-center h-[15vh] sm:h-[20vh] md:h-[23vh] pt-4  lg:h-[30vh] overflow-hidden rounded-sm shadow-sm">
+                    <img
+                      src={item.image}
+                      alt=""
+                      className=" h-full hover:scale-150 p-5 scale-125 duration-200  object-contain"
+                    />
+                  </div>
+                  <div className="bg-white pt-2 flex flex-col">
+                    <div className="px-1 mt-auto">
+                      <div className="flex items-end justify-center">
+                        <div className="flex">
+                          {Array.from({ length: 5 }, (_, index) =>
+                            index < item.rating.rate ? (
+                              <HiStar
+                                key={index}
+                                className="text-[#ffad33d5] size-[15px]"
+                              />
+                            ) : (
+                              <HiOutlineStar
+                                key={index}
+                                className="text-gray-400 size-[15px]"
+                              />
+                            )
+                          )}
+                        </div>
+                        <p className="text-gray-500 text-[10px]">
+                          ({item.rating.count})
+                        </p>
                       </div>
-                      <p className="text-gray-500 text-[10px]">
-                        ({item.rating.count})
+                      <p className="w-full text-center sm:text-sm text-indigo-500">
+                        {item.title}
+                      </p>
+                      <p className="font-semibold w-full text-center text-sm text-[#f86561] pb-2">
+                        ${item.price}
                       </p>
                     </div>
-                    <p className="w-full text-center sm:text-sm text-indigo-500">
-                      {item.title}
-                    </p>
-                    <p className="font-semibold w-full text-center text-sm text-[#f86561] pb-2">
-                      ${item.price}
-                    </p>
                   </div>
                 </div>
               </div>
@@ -285,13 +284,13 @@ export default function SliderForProducts({ data }) {
           </Slider>
 
           <div
-            className="  absolute top-[60%] sm:top-[50%] left-1 py-3  pl-1 hover:text-white hover:bg-gray-200 hover:left-0 border border-[#65e4e9]  duration-200 rounded-sm bg-[#cbfdff6c]"
+            className="  absolute top-[60%] sm:top-[55%] left-1 py-3  pl-1 hover:text-white hover:bg-gray-200 hover:left-0 border border-[#65e4e9]  duration-200 rounded-sm bg-[#cbfdff6c]"
             onClick={handlePrevSlide}
           >
             <IoIosArrowForward className="text-gray-400 rotate-180 size-5" />
           </div>
           <div
-            className="  absolute top-[60%] sm:top-[50%] right-1 py-3 pl-1 duration-200   hover:bg-gray-200 hover:right-0 border border-[#65e4e9] rounded-sm bg-[#cbfdff6c]"
+            className="  absolute top-[60%] sm:top-[55%] right-1 py-3 pl-1 duration-200   hover:bg-gray-200 hover:right-0 border border-[#65e4e9] rounded-sm bg-[#cbfdff6c]"
             onClick={handleNextSlide}
           >
             <IoIosArrowForward className="text-gray-400 size-6" />
