@@ -12,7 +12,7 @@ export default function LoadingAnimation() {
           </div>
 
           <div className=" w-full flex items-center justify-center">
-            <div class="loader"></div>
+            <div className="loader"></div>
           </div>
         </div>
       </div>
